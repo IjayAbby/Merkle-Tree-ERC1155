@@ -1,66 +1,37 @@
-## Foundry
+## Merkle Claim Implementation
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Merkle Claim smart contract is a solidity smart contract implementation of a Merkle drop mechanism, allowing users to claim ERC1155 tokens by providing a valid Merkle proof that is generated off-chain.
 
-Foundry consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features 
+- Efficient distribution of ERC1155 tokens using a Merkle tree. 
+- Prevents duplicate claims by tracking claimed addresses. 
+- Easy integration with off-chain Merkle tree generation tools. 
+- Supports dynamic token URI retrieval for improved flexibility. 
 
-## Documentation
+## Getting Started
 
-https://book.getfoundry.sh/
+To use this smart contract in your project, follow these steps:
 
-## Usage
+- **Deploy the Contract:** Deploy the Merkle.sol contract to your Ethereum network of choice. Make sure to provide the Merkle root hash during deployment.
 
-### Build
+- **Whitelist Users:** Generate a Merkle tree off-chain including the addresses eligible for claiming tokens and their respective amounts. Compute the Merkle root hash and provide it during contract deployment.
 
-```shell
-$ forge build
-```
+- **Claim Tokens:** Users can claim their tokens by providing a valid Merkle proof, proving their eligibility for the tokens.
 
-### Test
+## Author
 
-```shell
-$ forge test
-```
+👤 **Ijay Abby**
 
-### Format
+- Github: [@IjayAbby](https://github.com/IjayAbby)
+- Twitter: [@Ijay_js](https://twitter.com/Ijay_js)
+- LinkedIn: [Abigael Nyangasi](https://www.linkedin.com/in/ijayabby4/)
 
-```shell
-$ forge fmt
-```
+## Show your support
 
-### Gas Snapshots
+Give a :star2: if you like this project! :blush:
 
-```shell
-$ forge snapshot
-```
+## Acknowledgments
 
-### Anvil
+- Thanks are owed to [Temitayo Daniel](https://github.com/Timidan/merkle-distributor), for the template.
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
